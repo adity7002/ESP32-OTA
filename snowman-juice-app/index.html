@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snowman Juice Machine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="hud">
+        <h1>Snowman Juice Machine</h1>
+        <p>Step into view. Move left/right to choose fruits. Step closer to request more ice/soda.</p>
+        <div class="controls">
+          <button id="startBtn">Start Camera</button>
+          <span id="status">Idle</span>
+        </div>
+      </div>
+      <video id="video" playsinline autoplay muted></video>
+      <canvas id="canvas" width="960" height="540"></canvas>
+    </div>
+
+    <!-- TensorFlow.js and Pose Detection (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl@4.17.0/dist/tf-backend-webgl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@3.12.0/dist/pose-detection.min.js"></script>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
