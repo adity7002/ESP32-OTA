@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowman's Himalayan Juice Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Camera Feed Section -->
+        <div class="camera-section">
+            <h2>Human Detection</h2>
+            <div class="camera-feed">
+                <video id="cameraVideo" autoplay muted></video>
+                <canvas id="detectionCanvas" class="overlay"></canvas>
+                <div class="detection-info">
+                    <span id="personCount">People detected: 0</span>
+                    <span id="position">Position: None</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Himalayan Habitat Scene -->
+        <div class="habitat-scene">
+            <div class="mountain-background">
+                <div class="mountain mountain-1"></div>
+                <div class="mountain mountain-2"></div>
+                <div class="mountain mountain-3"></div>
+                <div class="snow-particles"></div>
+            </div>
+            
+            <!-- Snowman Character -->
+            <div class="snowman" id="snowman">
+                <div class="snowman-body">
+                    <div class="snowman-head">
+                        <div class="eyes">
+                            <div class="eye left-eye"></div>
+                            <div class="eye right-eye"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="snowman-torso">
+                        <div class="buttons">
+                            <div class="button"></div>
+                            <div class="button"></div>
+                            <div class="button"></div>
+                        </div>
+                    </div>
+                    <div class="snowman-base"></div>
+                </div>
+                <div class="arms">
+                    <div class="arm left-arm"></div>
+                    <div class="arm right-arm"></div>
+                </div>
+            </div>
+
+            <!-- Juice Machine -->
+            <div class="juice-machine">
+                <div class="machine-body">
+                    <div class="cold-presser" id="coldPresser">
+                        <div class="presser-handle"></div>
+                        <div class="presser-base"></div>
+                    </div>
+                    <div class="fruit-hopper">
+                        <div class="fruit apple"></div>
+                        <div class="fruit orange"></div>
+                        <div class="fruit strawberry"></div>
+                    </div>
+                    <div class="ice-dispenser">
+                        <div class="ice-cube"></div>
+                        <div class="ice-cube"></div>
+                        <div class="ice-cube"></div>
+                    </div>
+                    <div class="soda-dispenser">
+                        <div class="soda-bottle"></div>
+                    </div>
+                </div>
+                <div class="juice-output">
+                    <div class="glass" id="juiceGlass">
+                        <div class="juice-liquid" id="juiceLiquid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Elements -->
+            <div class="interaction-area">
+                <div class="demand-indicator">
+                    <span id="demandLevel">Demand: Low</span>
+                </div>
+                <div class="juice-stats">
+                    <span id="juiceType">Current: Apple Juice</span>
+                    <span id="iceLevel">Ice: Normal</span>
+                    <span id="sodaLevel">Soda: None</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="startCamera">Start Camera</button>
+            <button id="toggleAnimation">Toggle Animation</button>
+            <button id="makeJuice">Make Juice</button>
+            <button id="addIce">Add Ice</button>
+            <button id="addSoda">Add Soda</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
