@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mountains of Christmas', cursive;
+    background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #FFFFFF 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Camera Section */
+.camera-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.camera-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.camera-feed {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+#cameraVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.detection-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.detection-info span {
+    display: block;
+    margin: 2px 0;
+}
+
+/* Himalayan Habitat Scene */
+.habitat-scene {
+    position: relative;
+    height: 600px;
+    background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 30%, #FFFFFF 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Mountain Background */
+.mountain-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(45deg, #4A90E2, #7FB3D3);
+    border-radius: 50% 50% 0 0;
+}
+
+.mountain-1 {
+    width: 300px;
+    height: 200px;
+    left: 10%;
+    bottom: 0;
+    background: linear-gradient(45deg, #5D6D7E, #85929E);
+}
+
+.mountain-2 {
+    width: 250px;
+    height: 180px;
+    left: 35%;
+    bottom: 0;
+    background: linear-gradient(45deg, #34495E, #5D6D7E);
+}
+
+.mountain-3 {
+    width: 200px;
+    height: 150px;
+    left: 60%;
+    bottom: 0;
+    background: linear-gradient(45deg, #2C3E50, #34495E);
+}
+
+.snow-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: snowfall 10s linear infinite;
+}
+
+@keyframes snowfall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100px); }
+}
+
+/* Snowman Character */
+.snowman {
+    position: absolute;
+    left: 20%;
+    bottom: 20%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.snowman-body {
+    position: relative;
+}
+
+.snowman-head {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #fff, #f0f0f0);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eyes {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background: #2c3e50;
+    border-radius: 50%;
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+
+.nose {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid #FF6B35;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.mouth {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    width: 20px;
+    height: 10px;
+    border: 2px solid #2c3e50;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+}
+
+.snowman-torso {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #fff, #f0f0f0);
+    border-radius: 50%;
+    margin-top: -20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    background: #2c3e50;
+    border-radius: 50%;
+}
+
+.snowman-base {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #fff, #f0f0f0);
+    border-radius: 50%;
+    margin-top: -20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arms {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+}
+
+.arm {
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background: #8B4513;
+    border-radius: 4px;
+}
+
+.left-arm {
+    left: -50px;
+    transform: rotate(-30deg);
+    transform-origin: right center;
+    animation: armWave 2s ease-in-out infinite;
+}
+
+.right-arm {
+    right: -50px;
+    transform: rotate(30deg);
+    transform-origin: left center;
+}
+
+@keyframes armWave {
+    0%, 100% { transform: rotate(-30deg); }
+    50% { transform: rotate(-45deg); }
+}
+
+/* Juice Machine */
+.juice-machine {
+    position: absolute;
+    right: 15%;
+    bottom: 15%;
+    z-index: 5;
+    background: linear-gradient(145deg, #34495E, #2C3E50);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 300px;
+}
+
+.machine-body {
+    position: relative;
+    height: 100%;
+}
+
+.cold-presser {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 120px;
+    background: #95A5A6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presser-handle {
+    width: 60px;
+    height: 20px;
+    background: #E74C3C;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.presser-handle:hover {
+    transform: translateY(-5px);
+}
+
+.presser-base {
+    width: 60px;
+    height: 80px;
+    background: #7F8C8D;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.fruit-hopper {
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    width: 60px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.fruit {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.apple { background: #E74C3C; }
+.orange { background: #F39C12; }
+.strawberry { background: #E91E63; }
+
+.ice-dispenser {
+    position: absolute;
+    top: 160px;
+    right: 20px;
+    width: 60px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.ice-cube {
+    width: 15px;
+    height: 15px;
+    background: #AED6F1;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.soda-dispenser {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soda-bottle {
+    width: 20px;
+    height: 40px;
+    background: #F1C40F;
+    border-radius: 5px;
+}
+
+.juice-output {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.glass {
+    width: 40px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 20px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.juice-liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, #FF6B35, #F39C12);
+    transition: height 2s ease;
+    border-radius: 0 0 18px 18px;
+}
+
+/* Interactive Elements */
+.interaction-area {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 15;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.demand-indicator {
+    margin-bottom: 10px;
+}
+
+.demand-indicator span {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.juice-stats span {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #34495E;
+}
+
+/* Controls */
+.controls {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 12px 24px;
+    background: linear-gradient(145deg, #3498DB, #2980B9);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .habitat-scene {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .habitat-scene {
+        height: 400px;
+    }
+    
+    .snowman {
+        left: 10%;
+        transform: scale(0.8);
+    }
+    
+    .juice-machine {
+        right: 10%;
+        transform: scale(0.8);
+    }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "snowman-juice-machine",
+  "version": "1.0.0",
+  "description": "An interactive virtual juice machine experience featuring a snowman in a Himalayan habitat",
+  "main": "index.html",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py --port 8000",
+    "build": "echo 'No build process needed for static files'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "snowman",
+    "juice",
+    "machine",
+    "himalayan",
+    "interactive",
+    "camera",
+    "detection",
+    "animation",
+    "web",
+    "esp32"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/snowman-juice-machine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/snowman-juice-machine/issues"
+  },
+  "homepage": "https://github.com/yourusername/snowman-juice-machine#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "python": ">=3.7.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
